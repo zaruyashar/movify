@@ -1,0 +1,25 @@
+﻿@using MOVIFY.Model
+@model IEnumerable<Movie>
+
+<table table-bordered>
+    <thead>
+        <tr>
+            <td>Movie Title</td>
+            <td>Release Year</td>
+            <td>Category</td>
+            <td>Director</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.MovieTitle</td>
+                <td>@item.ReleaseYear</td>
+                <td>@item.Category.CategoryName</td>
+                <td>@item.Director.DirectorFullName</td>
+            </tr>
+        }
+    </tbody>
+</table>
+

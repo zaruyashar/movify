@@ -7,11 +7,11 @@ public partial class Movie
 {
     public int MovieId { get; set; }
 
-    public string? MovieTitle { get; set; }
+    public required string MovieTitle { get; set; }
 
-    public int? ReleaseYear { get; set; }
+    public required int ReleaseYear { get; set; }
 
-    public int? CategoryId { get; set; }
+    public required int CategoryId { get; set; }
 
     public int? DirectorId { get; set; }
 

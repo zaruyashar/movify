@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="MOVIFY.Data/MOVIFY.Data.csproj" />
+  <Project Path="MOVIFY.Model/MOVIFY.Model.csproj" />
+  <Project Path="MOVIFY/MOVIFY.csproj" />
+</Solution>

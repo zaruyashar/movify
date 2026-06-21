@@ -24,4 +24,8 @@
     <ProjectReference Include="..\MOVIFY.Model\MOVIFY.Model.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\mendy-assets\" />
+  </ItemGroup>
+
 </Project>

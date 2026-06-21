@@ -1,15 +1,12 @@
-using Microsoft.AspNetCore.Mvc;
-using MOVIFY.Models;
-using System.Diagnostics;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace MOVIFY.Controllers
 {
-    public class DefaultController : Controller
+    public class CategoryController : Controller
     {
         public IActionResult Index()
         {
             return View();
         }
-
     }
 }

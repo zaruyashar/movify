@@ -1,0 +1,101 @@
+﻿@model MOVIFY.Model.Movie
+
+@{
+    Layout = "~/Views/Shared/_MendyLayout.cshtml";
+    ViewData["Title"] = "Add a New Movie";
+}
+
+<link rel="stylesheet" type="text/css" href="~/mendy-assets/assets/libs/select2/dist/css/select2.min.css">
+
+<style>
+    .form-control.is-valid {
+        border-color: #28a745 !important;
+        background-image: none !important;
+    }
+    .form-control.is-invalid {
+        border-color: #ff8c00 !important;
+        background-image: none !important;
+    }
+</style>
+
+<div class="page-breadcrumb">
+    <div class="row align-items-center">
+        <div class="col-md-6 col-8 align-self-center">
+            <div class="d-flex align-items-center">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a asp-controller="Dashboard" asp-action="Index" class="link">Home</a></li>
+                        <li class="breadcrumb-item"><a asp-action="Index" class="link">Movies</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Add Movie</li>
+                    </ol>
+                </nav>
+            </div>
+            <h4 class="page-title mt-2">Add New Movie</h4>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid mt-4">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Movie Details</h4>
+
+                    <form asp-action="Create" method="post" class="mt-4">
+
+                        <div class="form-group mb-4">
+                            <label asp-for="MovieTitle" class="control-label font-weight-bold">Movie Title</label>
+                            <input asp-for="MovieTitle" class="form-control" placeholder="Enter movie title" />
+                            <span asp-validation-for="MovieTitle" class="text-danger small"></span>
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <label asp-for="ReleaseYear" class="control-label font-weight-bold">Release Year</label>
+                            <input asp-for="ReleaseYear" class="form-control" placeholder="e.g. 2024" />
+                            <span asp-validation-for="ReleaseYear" class="text-danger small"></span>
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <label asp-for="CategoryId" class="control-label font-weight-bold">Category</label>
+                            <select asp-for="CategoryId" class="form-control select2" style="width: 100%;" asp-items="ViewBag.Categories">
+                                <option value="">-- Select a Category --</option>
+                            </select>
+                            <span asp-validation-for="CategoryId" class="text-danger small"></span>
+                        </div>
+
+                        <div class="form-group mb-5">
+                            <label asp-for="DirectorId" class="control-label font-weight-bold">Director</label>
+                            <select asp-for="DirectorId" class="form-control select2" style="width: 100%;" asp-items="ViewBag.Directors">
+                                <option value="">-- Select a Director --</option>
+                            </select>
+                            <span asp-validation-for="DirectorId" class="text-danger small"></span>
+                        </div>
+
+                        <hr />
+                        <div class="form-actions mt-4 text-right">
+                            <button type="submit" class="btn btn-info px-4 mr-2">Save Movie</button>
+                            <a asp-action="Index" class="btn btn-dark px-4">Cancel</a>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/mendy-assets/assets/libs/select2/dist/js/select2.full.min.js"></script>
+<script>
+    $(document).ready(function() {
+    $(".select2").select2();
+
+    $("input").on("input", function() {
+    if ($(this).val().length > 0) {
+    $(this).removeClass("is-invalid").addClass("is-valid");
+    } else {
+    $(this).removeClass("is-valid").addClass("is-invalid");
+    }
+    });
+    });
+</script>

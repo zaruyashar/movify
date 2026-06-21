@@ -34,7 +34,6 @@ public partial class ApplicationDbContext : DbContext
 
             entity.ToTable("Category");
 
-            entity.Property(e => e.CategoryId).ValueGeneratedNever();
             entity.Property(e => e.CategoryName).HasMaxLength(100);
         });
 
@@ -44,7 +43,6 @@ public partial class ApplicationDbContext : DbContext
 
             entity.ToTable("Director");
 
-            entity.Property(e => e.DirectorId).ValueGeneratedNever();
             entity.Property(e => e.DirectorFullName).HasMaxLength(100);
         });
 
@@ -54,7 +52,6 @@ public partial class ApplicationDbContext : DbContext
 
             entity.ToTable("Movie");
 
-            entity.Property(e => e.MovieId).ValueGeneratedNever();
             entity.Property(e => e.MovieTitle).HasMaxLength(100);
 
             entity.HasOne(d => d.Category).WithMany(p => p.Movies)

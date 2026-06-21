@@ -11,6 +11,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options => options.
 UseSqlServer(builder.Configuration.GetConnectionString("Default")));
 // Service registrations
 builder.Services.AddScoped<IMovieService, MovieService>();
+builder.Services.AddScoped<IReportService, ReportService>();
 
 var app = builder.Build();
 

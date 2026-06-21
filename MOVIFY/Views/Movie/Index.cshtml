@@ -6,26 +6,67 @@
     ViewData["Title"] = "Movies";
 }
 
+<div class="page-breadcrumb">
+    <div class="row align-items-center">
+        <div class="col-md-6 col-8 align-self-center">
+            <div class="d-flex align-items-center">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a asp-controller="Dashboard" asp-action="Index" class="link">Home</a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">Movies</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <div class="col-md-6 col-4 align-self-center text-right">
+            <a asp-action="Create" class="btn btn-purple">
+                <i class="fa fa-plus mr-2"></i> Add Movie
+            </a>
+        </div>
+    </div>
+</div>
 
-<table table-bordered>
-    <thead>
-        <tr>
-            <td>Movie Title</td>
-            <td>Release Year</td>
-            <td>Category</td>
-            <td>Director</td>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>@item.MovieTitle</td>
-                <td>@item.ReleaseYear</td>
-                <td>@item.Category.CategoryName</td>
-                <td>@item.Director.DirectorFullName</td>
-            </tr>
-        }
-    </tbody>
-</table>
-
+<div class="container-fluid mt-4">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover file-export">
+                            <thead>
+                                <tr>
+                                    <th>Movie Title</th>
+                                    <th>Release Year</th>
+                                    <th>Category</th>
+                                    <th>Director</th>
+                                    <th class="text-right">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.MovieTitle</td>
+                                        <td>@item.ReleaseYear</td>
+                                        <td>@item.Category.CategoryName</td>
+                                        <td>@item.Director.DirectorFullName</td>
+                                        <td class="text-right">
+                                            <a asp-action="Edit" asp-route-id="@item.MovieId" class="btn btn-outline-info waves-effect waves-light">
+                                                <i class="fa fa-edit"></i> Edit
+                                            </a>
+                                            <a asp-action="Delete" asp-route-id="@item.MovieId" class="btn btn-outline-danger waves-effect waves-light">
+                                                <i class="fa fa-trash"></i> Delete
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

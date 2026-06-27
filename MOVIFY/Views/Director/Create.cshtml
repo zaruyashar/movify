@@ -1,0 +1,78 @@
+﻿@model MOVIFY.Model.Director
+
+@{
+    Layout = "~/Views/Shared/_MendyLayout.cshtml";
+    ViewData["Title"] = "Add a New Director";
+}
+
+<style>
+    .form-control.is-valid {
+        border-color: #28a745 !important;
+        background-image: none !important;
+    }
+
+    .form-control.is-invalid {
+        border-color: #ff8c00 !important;
+        background-image: none !important;
+    }
+</style>
+
+<div class="page-breadcrumb">
+    <div class="row align-items-center">
+        <div class="col-md-6 col-8 align-self-center">
+            <div class="d-flex align-items-center">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a asp-controller="Dashboard" asp-action="Index" class="link">Home</a></li>
+                        <li class="breadcrumb-item"><a asp-action="Index" class="link">Directors</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Add Director</li>
+                    </ol>
+                </nav>
+            </div>
+            <h4 class="page-title mt-2">Add New Director</h4>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid mt-4">
+    <div class="row">
+        <div class="col-lg-8 col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <form asp-action="Create" method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                        <div class="form-group mb-4">
+                            <label asp-for="DirectorFullName" class="control-label font-weight-bold">Full Name</label>
+                            <input asp-for="DirectorFullName" class="form-control form-control-lg" placeholder="Enter director's full name" autocomplete="off" />
+                            <span asp-validation-for="DirectorFullName" class="text-danger small"></span>
+                        </div>
+
+                        <hr />
+                        <div class="form-actions mt-4 text-right">
+                            <button type="submit" class="btn btn-info px-4 mr-2">Save Director</button>
+                            <a asp-action="Index" class="btn btn-dark px-4">Cancel</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var inputs = document.querySelectorAll("input");
+        inputs.forEach(function(input) {
+            input.addEventListener("input", function() {
+                if (this.value.length > 0) {
+                    this.classList.remove("is-invalid");
+                    this.classList.add("is-valid");
+                } else {
+                    this.classList.remove("is-valid");
+                    this.classList.add("is-invalid");
+                }
+            });
+        });
+    });
+</script>

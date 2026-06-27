@@ -12,6 +12,8 @@ UseSqlServer(builder.Configuration.GetConnectionString("Default")));
 // Service registrations
 builder.Services.AddScoped<IMovieService, MovieService>();
 builder.Services.AddScoped<IReportService, ReportService>();
+builder.Services.AddScoped<ICategoryService, CategoryService>();
+builder.Services.AddScoped<IDirectorService, DirectorService>();
 
 var app = builder.Build();
 

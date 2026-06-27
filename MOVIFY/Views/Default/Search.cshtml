@@ -1,0 +1,62 @@
+﻿@using MOVIFY.Model
+@model IEnumerable<Movie>
+
+@{
+    Layout = "~/Views/Shared/_MovifyLayout.cshtml";
+    ViewData["Title"] = "Search Results";
+}
+
+<section class="ptb100 bg-light">
+    <div class="container">
+        <div class="row justify-content-center mb-5 mt-5">
+            <div class="col-md-8 text-center">
+                <h2 class="title">Search Results</h2>
+                <h6 class="subtitle">Showing results for: <strong>"@ViewBag.Keyword"</strong></h6>
+            </div>
+        </div>
+
+        <div class="row">
+            @if (Model != null && Model.Any())
+            {
+                foreach (var movie in Model)
+                {
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card h-100 border-0 shadow-sm" style="border-radius: 12px; transition: transform 0.3s ease;">
+                            <div class="card-body text-center p-4">
+                                <div class="mb-4 mt-2">
+                                    <i class="fa fa-film fa-3x" style="color: #b974fe;"></i>
+                                </div>
+                                <h4 class="font-weight-bold mb-1">@movie.MovieTitle</h4>
+                                <p class="text-muted mb-3 font-weight-bold">@movie.ReleaseYear</p>
+
+                                <div class="mb-4">
+                                    <span class="badge badge-pill text-white px-3 py-2" style="background-color: #32cdfd; font-size: 0.85rem;">
+                                        @(movie.Category != null ? movie.Category.CategoryName : "Uncategorized")
+                                    </span>
+                                </div>
+
+                                <hr style="border-color: rgba(0,0,0,0.05);">
+                                <p class="mb-0 text-secondary">
+                                    <small class="text-uppercase letter-spacing-1">Directed by</small><br>
+                                    <strong class="text-dark">@(movie.Director != null ? movie.Director.DirectorFullName : "Unknown")</strong>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+            else
+            {
+                <div class="col-12 text-center">
+                    <p class="text-muted">No movies found matching your criteria. Please try another keyword!</p>
+                </div>
+            }
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12 text-center">
+                <a asp-controller="Default" asp-action="Index" class="btn btn-main btn-effect">Back to Home</a>
+            </div>
+        </div>
+    </div>
+</section>

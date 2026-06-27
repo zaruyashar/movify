@@ -81,7 +81,6 @@
     </style>
 
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 </head>
 
 <body>
@@ -125,17 +124,45 @@
                     <ul class="navbar-nav float-left mr-auto">
 
                         <!-- create new -->
-                        <!-- Search -->
-                        <li class="nav-item search-box">
-                            <a class="nav-link waves-effect waves-dark" href="javascript:void(0)">
-                                <i data-feather="search"></i>
+                        <!-- Topbar quick actions -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="btn btn-sm btn-purple rounded-pill px-3">
+                                    <i class="fa fa-plus mr-1"></i> Add New
+                                </span>
                             </a>
-                            <form class="app-search position-absolute">
-                                <input type="text" class="form-control" placeholder="Search for...">
-                                <a class="srh-btn">
-                                    <i class="ti-close"></i>
-                                </a>
-                            </form>
+                            <div class="dropdown-menu dropdown-menu-left mailbox animated bounceInDown">
+                                <ul class="list-style-none">
+                                    <li>
+                                        <div class="drop-title bg-light border-bottom text-dark font-weight-bold">Quick Actions</div>
+                                    </li>
+                                    <li>
+                                        <div class="message-center messages">
+                                            <a asp-controller="Movie" asp-action="Create" class="message-item d-flex align-items-center border-bottom px-3 py-2">
+                                                <span class="btn btn-info rounded-circle btn-circle"><i data-feather="film" class="text-white"></i></span>
+                                                <div class="w-75 d-inline-block v-middle pl-2">
+                                                    <h5 class="message-title mb-0 mt-1">New Movie</h5>
+                                                    <span class="font-12 text-nowrap d-block text-muted text-truncate">Add a new movie to the database</span>
+                                                </div>
+                                            </a>
+                                            <a asp-controller="Category" asp-action="Create" class="message-item d-flex align-items-center border-bottom px-3 py-2">
+                                                <span class="btn btn-success rounded-circle btn-circle"><i data-feather="folder" class="text-white"></i></span>
+                                                <div class="w-75 d-inline-block v-middle pl-2">
+                                                    <h5 class="message-title mb-0 mt-1">New Category</h5>
+                                                    <span class="font-12 text-nowrap d-block text-muted text-truncate">Log a new genre or category</span>
+                                                </div>
+                                            </a>
+                                            <a asp-controller="Director" asp-action="Create" class="message-item d-flex align-items-center px-3 py-2">
+                                                <span class="btn btn-warning rounded-circle btn-circle"><i data-feather="user-plus" class="text-white"></i></span>
+                                                <div class="w-75 d-inline-block v-middle pl-2">
+                                                    <h5 class="message-title mb-0 mt-1">New Director</h5>
+                                                    <span class="font-12 text-nowrap d-block text-muted text-truncate">Log a new director to the system</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
                         </li>
                     </ul>
 

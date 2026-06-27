@@ -155,7 +155,7 @@
 </div>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
+        window.addEventListener("load", function() {
         const labels = @Html.Raw(Json.Serialize(ViewBag.CategoryLabels));
         const counts = @Html.Raw(Json.Serialize(ViewBag.CategoryCounts));
 
@@ -179,8 +179,10 @@
         });
 
         if (chartData.length > 0) {
-            c3.generate({
-                bindto: '#category-chart',
+            const chartContainer = document.getElementById('category-chart');
+
+            var categoryChart = c3.generate({
+                bindto: chartContainer,
                 data: {
                     columns: chartData,
                     type: 'donut',
@@ -193,6 +195,15 @@
                 },
                 legend: { show: false }
             });
+
+            const resizeObserver = new ResizeObserver(() => {
+                categoryChart.resize();
+            });
+
+            resizeObserver.observe(chartContainer.parentElement);
         }
     });
+
+
+
 </script>

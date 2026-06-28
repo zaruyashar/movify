@@ -1,4 +1,4 @@
-# 🎥  Movify:A Catalog Management System
+# 🎥 Movify: A Catalog Management System
 
 Movify is a comprehensive, N-tier movie management application developed with a focus on clean architecture and modern .NET development practices. The project integrates robust administrative controls with a user-friendly public interface.
 

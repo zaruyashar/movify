@@ -117,57 +117,54 @@
 
         <div class="row">
             <div class="col-md-4 mb-4">
-                <div class="bloglist-post-holder shadow-hover">
-                    <a href="#" class="bloglist-thumb-link hover-link">
-                        <div class="bloglist-post-thumbnail" style="background: url('/movify-assets/assets/images/blog/bloglist-1.jpg') center center; background-size: cover; height: 250px;"></div>
-                    </a>
-                    <div class="bloglist-text-wrapper p-4 border border-top-0 rounded-bottom">
-                        <h4 class="bloglist-title font-weight-bold mb-2">
-                            <a href="#" class="text-dark">Top 10 Action Movies of the Decade</a>
-                        </h4>
+                <div class="bloglist-post-holder shadow-hover h-100 d-flex flex-column">
+                    <div class="bloglist-post-thumbnail" style="background: url('https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=800&q=80') center center; background-size: cover; height: 250px;"></div>
+                    <div class="bloglist-text-wrapper p-4 border border-top-0 rounded-bottom flex-grow-1 d-flex flex-column">
+                        <h4 class="bloglist-title font-weight-bold mb-2">Top 10 Action Movies of the Decade</h4>
                         <div class="bloglist-meta text-muted mb-3">
                             <i class="fa fa-calendar mr-1"></i> 27 Jun 2026
                         </div>
-                        <div class="bloglist-excerpt">
+                        <div class="bloglist-excerpt mb-3">
                             <p class="text-secondary">Explore the most thrilling, explosive, and groundbreaking action films that defined the last ten years of cinema history...</p>
+                        </div>
+                        <div class="mt-auto">
+                            <button type="button" class="btn btn-sm btn-main btn-effect" data-toggle="modal" data-target="#articleModal1">Read More</button>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="col-md-4 mb-4">
-                <div class="bloglist-post-holder shadow-hover">
-                    <a href="#" class="bloglist-thumb-link hover-link">
-                        <div class="bloglist-post-thumbnail" style="background: url('/movify-assets/assets/images/blog/bloglist-2.jpg') center center; background-size: cover; height: 250px;"></div>
-                    </a>
-                    <div class="bloglist-text-wrapper p-4 border border-top-0 rounded-bottom">
-                        <h4 class="bloglist-title font-weight-bold mb-2">
-                            <a href="#" class="text-dark">Inside the Director's Mind</a>
-                        </h4>
+                <div class="bloglist-post-holder shadow-hover h-100 d-flex flex-column">
+                    <div class="bloglist-post-thumbnail" style="background: url('https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=800&q=80') center center; background-size: cover; height: 250px;"></div>
+                    <div class="bloglist-text-wrapper p-4 border border-top-0 rounded-bottom flex-grow-1 d-flex flex-column">
+                        <h4 class="bloglist-title font-weight-bold mb-2">Inside the Director's Mind</h4>
                         <div class="bloglist-meta text-muted mb-3">
                             <i class="fa fa-calendar mr-1"></i> 25 Jun 2026
                         </div>
-                        <div class="bloglist-excerpt">
+                        <div class="bloglist-excerpt mb-3">
                             <p class="text-secondary">An exclusive interview detailing the creative process, struggles, and triumphs of crafting award-winning masterpieces...</p>
+                        </div>
+                        <div class="mt-auto">
+                            <button type="button" class="btn btn-sm btn-main btn-effect" data-toggle="modal" data-target="#articleModal2">Read More</button>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="col-md-4 mb-4">
-                <div class="bloglist-post-holder shadow-hover">
-                    <a href="#" class="bloglist-thumb-link hover-link">
-                        <div class="bloglist-post-thumbnail" style="background: url('/movify-assets/assets/images/blog/bloglist-3.jpg') center center; background-size: cover; height: 250px;"></div>
-                    </a>
-                    <div class="bloglist-text-wrapper p-4 border border-top-0 rounded-bottom">
-                        <h4 class="bloglist-title font-weight-bold mb-2">
-                            <a href="#" class="text-dark">Upcoming Sci-Fi Releases</a>
-                        </h4>
+                <div class="bloglist-post-holder shadow-hover h-100 d-flex flex-column">
+                    <div class="bloglist-post-thumbnail" style="background: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80') center center; background-size: cover; height: 250px;"></div>
+                    <div class="bloglist-text-wrapper p-4 border border-top-0 rounded-bottom flex-grow-1 d-flex flex-column">
+                        <h4 class="bloglist-title font-weight-bold mb-2">Upcoming Sci-Fi Releases</h4>
                         <div class="bloglist-meta text-muted mb-3">
                             <i class="fa fa-calendar mr-1"></i> 20 Jun 2026
                         </div>
-                        <div class="bloglist-excerpt">
+                        <div class="bloglist-excerpt mb-3">
                             <p class="text-secondary">Get ready to travel beyond the stars. Here is a sneak peek at the most anticipated science fiction movies coming out soon...</p>
+                        </div>
+                        <div class="mt-auto">
+                            <button type="button" class="btn btn-sm btn-main btn-effect" data-toggle="modal" data-target="#articleModal3">Read More</button>
                         </div>
                     </div>
                 </div>
@@ -176,27 +173,59 @@
     </div>
 </section>
 
-<section class="subscribe bg-light2 ptb100">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-7 text-center">
-                <h2 class="title">Join Movify Now!</h2>
-                <h6 class="subtitle">Subscribe to our newsletter to receive the latest updates, movie releases, and exclusive content.</h6>
+<div class="modal fade" id="articleModal1" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+            <div class="modal-header border-bottom-0 pb-0">
+                <h4 class="modal-title font-weight-bold">Top 10 Action Movies of the Decade</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
-        </div>
-
-        <div class="row justify-content-center">
-            <div class="col-md-7 col-sm-10 col-12">
-                <form action="#" class="mailchimp mt50" novalidate>
-                    <div class="form-group">
-                        <div class="input-group">
-                            <input type="email" name="EMAIL" class="form-control" id="mc-email" placeholder="Enter your email address" autocomplete="off">
-                            <label for="mc-email"></label>
-                            <button type="submit" class="btn btn-main btn-effect">Subscribe</button>
-                        </div>
-                    </div>
-                </form>
+            <div class="modal-body">
+                <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=800&q=80" class="img-fluid rounded mb-4" alt="Action Movies">
+                <p class="text-muted"><i class="fa fa-calendar mr-1"></i> 27 Jun 2026 | By Editorial Team</p>
+                <p style="color: #100811">The last ten years have brought us some of the most adrenaline-pumping, visually spectacular action sequences ever committed to film. From meticulously choreographed hand-to-hand combat scenes that redefine stunt work, to massive CGI-enhanced set pieces that destroy entire fictional cities, the genre has evolved tremendously.</p>
+                <p style="color: #100811">Directors have started relying more on practical effects where possible, creating a gritty realism that audiences crave. In this list, we look at the films that didn't just entertain us, but pushed the boundaries of what action cinema can achieve. Whether it's high-speed car chases or intricate heist sequences, these movies set the gold standard.</p>
             </div>
         </div>
     </div>
-</section>
+</div>
+
+<div class="modal fade" id="articleModal2" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+            <div class="modal-header border-bottom-0 pb-0">
+                <h4 class="modal-title font-weight-bold">Inside the Director's Mind</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=800&q=80" class="img-fluid rounded mb-4" alt="Director">
+                <p class="text-muted"><i class="fa fa-calendar mr-1"></i> 25 Jun 2026 | By Editorial Team</p>
+                <p style="color: #100811">What does it take to helm a multi-million dollar project with hundreds of crew members looking to you for answers every single day? Directing is often described as answering a thousand questions a day, and in our latest exclusive interview, we sit down with some of the industry's most prolific creators to find out how they manage the chaos.</p>
+                <p style="color: #100811">We explore their creative processes—from the initial spark of an idea reading a script, to the painstaking hours spent in the editing bay. They share stories of on-set disasters that turned into happy accidents, and the difficult compromises they had to make to get the final cut onto the big screen.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="articleModal3" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+            <div class="modal-header border-bottom-0 pb-0">
+                <h4 class="modal-title font-weight-bold">Upcoming Sci-Fi Releases</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80" class="img-fluid rounded mb-4" alt="Sci-Fi">
+                <p class="text-muted"><i class="fa fa-calendar mr-1"></i> 20 Jun 2026 | By Editorial Team</p>
+                <p style="color: #100811">The future is looking incredibly bright—and terrifying—for science fiction fans. Studios are taking bigger risks on original IPs, bringing mind-bending concepts of time travel, artificial intelligence, and deep-space exploration to the forefront of modern cinema.</p>
+                <p style="color: #100811">Over the next two years, we are slated to see a resurgence of cyberpunk aesthetics, alongside philosophical space operas that ask fundamental questions about human existence. With visual effects technology reaching photorealistic levels, the only limit to these upcoming worlds is the imagination of their creators.</p>
+            </div>
+        </div>
+    </div>
+</div>
